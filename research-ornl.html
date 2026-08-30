@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Double-Pulse LIBS of Flowing Argon for Molten Salt Reactor Off-Gas Monitoring &mdash; Charles Dalton</title>
+<meta name="description" content="Can a laser spark in a moving gas stream be made to report, reliably, what is in that stream?">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="mark" href="index.html">
+      <span class="mark-name">Charles Dalton</span>
+      <span class="mark-sub">Nuclear Engineering &amp; Physics &middot; University of Florida</span>
+    </a>
+    <nav class="nav" aria-label="Sections"><a class="nav-link" href="index.html">About</a><a class="nav-link is-current" href="research.html">Research</a><a class="nav-link" href="coursework.html">Coursework</a><a class="nav-link" href="cv.html">CV / Resume</a></nav>
+  </div>
+  <div class="rule" aria-hidden="true"></div>
+</header>
+
+<main id="main">
+<section class="wrap band">
+  <p class="eyebrow"><a class="back" href="research.html">Research</a> <span aria-hidden="true">/</span> Oak Ridge National Laboratory</p>
+  <h1 class="h1">Double-Pulse LIBS of Flowing Argon for Molten Salt Reactor Off-Gas Monitoring</h1>
+  <p class="lede">Can a laser spark in a moving gas stream be made to report, reliably, what is in that stream?</p>
+  <dl class="plate"><div class="pl-row"><dt>Project</dt><dd>Double-Pulse LIBS of Flowing Argon for Molten Salt Reactor Off-Gas Monitoring</dd></div><div class="pl-row"><dt>Principal investigator</dt><dd>Dr. Hunter B. Andrews and Dr. Zechariah B. Kitzhaber</dd></div><div class="pl-row"><dt>Institution</dt><dd>Oak Ridge National Laboratory</dd></div><div class="pl-row"><dt>Department / division</dt><dd>Radioisotope Science and Technology Division</dd></div><div class="pl-row"><dt>Role</dt><dd>Research Intern, DOE Science Undergraduate Laboratory Internship (SULI)</dd></div><div class="pl-row"><dt>Affiliation</dt><dd>May 2026 &ndash; present &nbsp;&middot;&nbsp; four months, ongoing</dd></div></dl><ul class="tags"><li>double-pulse LIBS</li><li>ICCD imaging</li><li>echelle spectroscopy</li><li>factorial design</li><li>Python</li></ul>
+</section>
+
+<section class="wrap band">
+  <figure class="figure">
+<svg class="schematic" viewBox="0 0 720 300" role="img" aria-label="Schematic of the double-pulse LIBS arrangement: two collinear laser pulses separated by an interpulse delay focus into a flowing argon stream, with an echelle spectrometer and gated ICCD camera collecting the plasma emission.">
+  <defs>
+    <marker id="ah" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L7 3 L0 6 z" fill="var(--ar-i)"/>
+    </marker>
+    <marker id="ah2" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L7 3 L0 6 z" fill="var(--ar-ii)"/>
+    </marker>
+    <radialGradient id="plasma">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity=".95"/>
+      <stop offset="35%" stop-color="var(--argon)" stop-opacity=".8"/>
+      <stop offset="100%" stop-color="var(--argon)" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- flow cell -->
+  <rect x="300" y="70" width="120" height="150" rx="4" class="sc-box"/>
+  <text x="360" y="60" class="sc-l" text-anchor="middle">flow cell</text>
+  <path d="M360 235 L360 205" class="sc-flow" marker-end="url(#ah2)"/>
+  <path d="M360 90 L360 60" class="sc-flow" opacity=".45"/>
+  <text x="392" y="252" class="sc-s" text-anchor="middle">Ar, 0&ndash;10 L/min</text>
+
+  <!-- lasers -->
+  <rect x="40" y="92" width="86" height="34" rx="3" class="sc-box"/>
+  <text x="83" y="113" class="sc-s" text-anchor="middle">pulse 1</text>
+  <rect x="40" y="152" width="86" height="34" rx="3" class="sc-box"/>
+  <text x="83" y="173" class="sc-s" text-anchor="middle">pulse 2</text>
+  <path d="M126 109 L214 109 L214 139 L292 145" class="sc-beam" marker-end="url(#ah)"/>
+  <path d="M126 169 L214 169 L214 151 L292 148" class="sc-beam" marker-end="url(#ah)"/>
+  <text x="196" y="98" class="sc-s" text-anchor="middle">&Delta;t</text>
+
+  <!-- focusing lens -->
+  <ellipse cx="292" cy="146" rx="7" ry="26" class="sc-lens"/>
+  <text x="286" y="206" class="sc-s" text-anchor="middle">focusing</text>
+
+  <!-- plasma -->
+  <circle cx="356" cy="146" r="34" fill="url(#plasma)"/>
+  <circle cx="356" cy="146" r="4" fill="#fff" opacity=".9"/>
+  <text x="356" y="146" class="sc-s" text-anchor="middle" dy="-44">plasma</text>
+
+  <!-- collection -->
+  <line x1="424" y1="146" x2="498" y2="146" class="sc-collect"/>
+  <ellipse cx="452" cy="146" rx="6" ry="20" class="sc-lens"/>
+  <text x="452" y="184" class="sc-s" text-anchor="middle">collection</text>
+  <line x1="498" y1="92" x2="498" y2="200" class="sc-collect"/>
+  <line x1="498" y1="92" x2="520" y2="92" class="sc-collect" marker-end="url(#ah2)"/>
+  <line x1="498" y1="200" x2="520" y2="200" class="sc-collect" marker-end="url(#ah2)"/>
+  <rect x="528" y="66" width="150" height="52" rx="3" class="sc-box"/>
+  <text x="603" y="88" class="sc-l" text-anchor="middle">echelle</text>
+  <text x="603" y="105" class="sc-s" text-anchor="middle">spectrometer</text>
+  <rect x="528" y="174" width="150" height="52" rx="3" class="sc-box"/>
+  <text x="603" y="196" class="sc-l" text-anchor="middle">ICCD</text>
+  <text x="603" y="213" class="sc-s" text-anchor="middle">gated imaging</text>
+</svg>
+<figcaption>Measurement geometry: two collinear pulses separated by an interpulse delay &Delta;t are focused into flowing argon; emission from the resulting plasma is split between an echelle spectrometer and a gated ICCD camera, so that spectra and plasma morphology are recorded for the same shot.</figcaption>
+</figure>
+<figure class="figure">
+  <!-- REPLACE THIS BLOCK with:  <img class="photo" src="images/ornl-setup.jpg" alt="describe the photo"> -->
+  <div class="photo-slot">
+    <span class="slot-tag">images/ornl-setup.jpg</span>
+    <span class="slot-note">Add a photo of the experimental setup, your poster, or an ICCD plasma image</span>
+  </div>
+  <figcaption>The dual-pulse LIBS bench at Oak Ridge, with the flow cell at the focus and collection optics feeding the spectrometer.</figcaption>
+</figure>
+</section>
+
+<section class="wrap band prose">
+  <h2 class="h2">Research focus</h2>
+  <p>Molten salt reactors carry their fuel in the coolant, which means the fission products come with it. The noble gases &mdash; krypton and xenon &mdash; leave the salt and enter an off-gas stream, and what is in that stream is a direct readout of what is happening in the core. Today that stream is characterized largely by taking samples away and analyzing them elsewhere, which is slow, and for material accountancy purposes, a gap in the record. The question this project asks is whether laser-induced breakdown spectroscopy can close that gap: fire a laser into the gas, look at the light the resulting plasma emits, and read the composition directly, continuously, in place.</p>
+<p>A single laser pulse in a flowing gas is a marginal measurement &mdash; the plasma is faint, the gas is moving, and the shot-to-shot scatter is large. Double-pulse LIBS improves on it by firing a second pulse into the low-density region left by the first, and it has a large parameter space: the delay between pulses, the energy given to each, the gas flow rate, and the camera gate delay all interact. My work characterized that space systematically and, more importantly, asked <em>why</em> particular configurations work. Rather than treating the plasma as a black box to be optimized, I recorded plasma images alongside every spectrum, so that the shape and position of the plasma could be tested directly as a predictor of measurement quality. The result is that spatial behavior &mdash; where the plasma forms relative to the focal plane, and whether it forms as one kernel or two &mdash; turns out to explain a great deal of the variation in signal quality, and it does so differently for neutral and ionic argon lines.</p>
+  <h2 class="h2">My responsibilities</h2>
+  <p>I ran the experiment and wrote everything downstream of it. On the hardware side, that meant operating the dual-pulse laser system and the flowing-gas cell, aligning the collection optics, and coordinating an echelle spectrometer with a gated ICCD camera so that spectra and plasma images were captured for the same laser shots. I designed the acquisition campaign as a factorial sweep over interpulse delay, both pulse energies, flow rate, and gate delay, totaling 720 configurations, so that interactions between parameters could be estimated rather than assumed away.</p>
+<p>On the analysis side, I built the full Python pipeline: Voigt-profile fitting of the argon lines with safeguards that keep the fits honest at low signal-to-noise, segmentation of the plasma images into morphological metrics, and a statistical layer using Type II ANOVA with cluster-robust standard errors, since replicate shots within a configuration are not independent. Working through the timing data, I found and corrected a systematic camera trigger offset of roughly 215&nbsp;ns that had affected a substantial fraction of the derived kernel-separation values &mdash; a correction that changed one of the figures materially. I am currently first author on the manuscript from this work, in preparation for <em>Spectrochimica Acta Part B</em>, and I presented the configuration study as a poster at the ORNL SULI summer session.</p>
+  <h2 class="h2">Context</h2>
+  <p>This work sits inside a larger effort at Oak Ridge to make advanced reactors measurable in real time. Off-gas monitoring is attractive for safeguards precisely because it is continuous: an instrument that watches the stream all the time is much harder to defeat than a periodic sample, and it gives operators a live picture of core conditions. The obstacle has been that the environment is unforgiving and the analytes are noble gases, which are chemically unhelpful and spectroscopically demanding. LIBS is a candidate because it needs no reagents and no physical contact &mdash; only optical access.</p>
+<p>The broader lesson I took from the summer is methodological. In a measurement this noisy, the interesting result is often not the mean but the variance, and understanding where the variance comes from physically is what turns a laboratory demonstration into an instrument someone can trust.</p>
+  
+</section>
+
+<section class="wrap band">
+  <a class="btn" href="research.html">&larr; All research projects</a>
+</section>
+</main>
+<footer class="site-foot" id="contact">
+  <div class="rule" aria-hidden="true"></div>
+  <div class="wrap foot-inner">
+    <div>
+      <h2 class="foot-h">Contact</h2>
+      <p class="foot-p">Happy to talk about optical diagnostics, molten salt systems, or graduate research.</p>
+      <ul class="contact-list">
+        <li><span class="k">Email</span><a href="mailto:charles.dalton@ufl.edu">charles.dalton@ufl.edu</a></li>
+        <li><span class="k">LinkedIn</span><a href="https://linkedin.com/in/charles-dalton11">linkedin.com/in/charles-dalton11</a></li>
+        <li><span class="k">Location</span><span>Gainesville, Florida</span></li>
+      </ul>
+    </div>
+    <div class="foot-meta">
+      <p>University Scholars Program E&#8209;Portfolio</p>
+      <p>University of Florida &middot; 2026&ndash;2027</p>
+      <a class="btn btn-ghost" href="assets/Charles_Dalton_CV.pdf" download>Download CV (PDF)</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
