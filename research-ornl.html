@@ -4,7 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Double-Pulse LIBS of Flowing Argon for Molten Salt Reactor Off-Gas Monitoring &mdash; Charles Dalton</title>
-<meta name="description" content="Can a laser spark in a moving gas stream be made to report, reliably, what is in that stream?">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300&display=swap" rel="stylesheet">
@@ -53,7 +52,7 @@
   <text x="360" y="60" class="sc-l" text-anchor="middle">flow cell</text>
   <path d="M360 235 L360 205" class="sc-flow" marker-end="url(#ah2)"/>
   <path d="M360 90 L360 60" class="sc-flow" opacity=".45"/>
-  <text x="392" y="252" class="sc-s" text-anchor="middle">Ar, 0&ndash;10 L/min</text>
+  <text x="392" y="252" class="sc-s" text-anchor="middle">Ar, 0&ndash;2 L/min</text>
 
   <!-- lasers -->
   <rect x="40" y="92" width="86" height="34" rx="3" class="sc-box"/>
@@ -87,7 +86,6 @@
   <text x="603" y="196" class="sc-l" text-anchor="middle">ICCD</text>
   <text x="603" y="213" class="sc-s" text-anchor="middle">gated imaging</text>
 </svg>
-<figcaption>Measurement geometry: two collinear pulses separated by an interpulse delay &Delta;t are focused into flowing argon; emission from the resulting plasma is split between an echelle spectrometer and a gated ICCD camera, so that spectra and plasma morphology are recorded for the same shot.</figcaption>
 </figure>
 <figure class="figure">
   <!-- REPLACE THIS BLOCK with:  <img class="photo" src="images/ornl-setup.jpg" alt="describe the photo"> -->
@@ -101,14 +99,9 @@
 
 <section class="wrap band prose">
   <h2 class="h2">Research focus</h2>
-  <p>Molten salt reactors carry their fuel in the coolant, which means the fission products come with it. The noble gases &mdash; krypton and xenon &mdash; leave the salt and enter an off-gas stream, and what is in that stream is a direct readout of what is happening in the core. Today that stream is characterized largely by taking samples away and analyzing them elsewhere, which is slow, and for material accountancy purposes, a gap in the record. The question this project asks is whether laser-induced breakdown spectroscopy can close that gap: fire a laser into the gas, look at the light the resulting plasma emits, and read the composition directly, continuously, in place.</p>
-<p>A single laser pulse in a flowing gas is a marginal measurement &mdash; the plasma is faint, the gas is moving, and the shot-to-shot scatter is large. Double-pulse LIBS improves on it by firing a second pulse into the low-density region left by the first, and it has a large parameter space: the delay between pulses, the energy given to each, the gas flow rate, and the camera gate delay all interact. My work characterized that space systematically and, more importantly, asked <em>why</em> particular configurations work. Rather than treating the plasma as a black box to be optimized, I recorded plasma images alongside every spectrum, so that the shape and position of the plasma could be tested directly as a predictor of measurement quality. The result is that spatial behavior &mdash; where the plasma forms relative to the focal plane, and whether it forms as one kernel or two &mdash; turns out to explain a great deal of the variation in signal quality, and it does so differently for neutral and ionic argon lines.</p>
+  <p>The LIBS lab at Oak Ridge National Laboratory uses laser-induced breakdown spectroscopy (LIBS) to characterize samples for advanced reactor purposes. This includes characterizing the off-gas seen in molten salt reactors, which is relevant as MSRs can release aersolized and gaseous radioactive byproducts.</p>
   <h2 class="h2">My responsibilities</h2>
-  <p>I ran the experiment and wrote everything downstream of it. On the hardware side, that meant operating the dual-pulse laser system and the flowing-gas cell, aligning the collection optics, and coordinating an echelle spectrometer with a gated ICCD camera so that spectra and plasma images were captured for the same laser shots. I designed the acquisition campaign as a factorial sweep over interpulse delay, both pulse energies, flow rate, and gate delay, totaling 720 configurations, so that interactions between parameters could be estimated rather than assumed away.</p>
-<p>On the analysis side, I built the full Python pipeline: Voigt-profile fitting of the argon lines with safeguards that keep the fits honest at low signal-to-noise, segmentation of the plasma images into morphological metrics, and a statistical layer using Type II ANOVA with cluster-robust standard errors, since replicate shots within a configuration are not independent. Working through the timing data, I found and corrected a systematic camera trigger offset of roughly 215&nbsp;ns that had affected a substantial fraction of the derived kernel-separation values &mdash; a correction that changed one of the figures materially. I am currently first author on the manuscript from this work, in preparation for <em>Spectrochimica Acta Part B</em>, and I presented the configuration study as a poster at the ORNL SULI summer session.</p>
-  <h2 class="h2">Context</h2>
-  <p>This work sits inside a larger effort at Oak Ridge to make advanced reactors measurable in real time. Off-gas monitoring is attractive for safeguards precisely because it is continuous: an instrument that watches the stream all the time is much harder to defeat than a periodic sample, and it gives operators a live picture of core conditions. The obstacle has been that the environment is unforgiving and the analytes are noble gases, which are chemically unhelpful and spectroscopically demanding. LIBS is a candidate because it needs no reagents and no physical contact &mdash; only optical access.</p>
-<p>The broader lesson I took from the summer is methodological. In a measurement this noisy, the interesting result is often not the mean but the variance, and understanding where the variance comes from physically is what turns a laboratory demonstration into an instrument someone can trust.</p>
+  <p>I designed an factorial designed experiment using double pulse-LIBS to find signal-to-noise ratios of argon gas under different configurations. This included different laser energies, interpulse delays, gate delays, and gas flow rates.</p>
   
 </section>
 
@@ -121,7 +114,7 @@
   <div class="wrap foot-inner">
     <div>
       <h2 class="foot-h">Contact</h2>
-      <p class="foot-p">Happy to talk about optical diagnostics, molten salt systems, or graduate research.</p>
+      <p class="foot-p">Happy to talk about optical diagnostics, advanced reactor systems, or graduate research.</p>
       <ul class="contact-list">
         <li><span class="k">Email</span><a href="mailto:charles.dalton@ufl.edu">charles.dalton@ufl.edu</a></li>
         <li><span class="k">LinkedIn</span><a href="https://linkedin.com/in/charles-dalton11">linkedin.com/in/charles-dalton11</a></li>
