@@ -356,6 +356,12 @@ main > .band:last-child { padding-bottom: var(--gap); }
 /* --------------------------------------------------------------- figures */
 .figure { margin: 0 0 2.5rem; }
 .figure + .figure { margin-top: 2.5rem; }
+.video {
+  display: block; width: 100%; height: auto;
+  background: var(--ink-2);
+  border: 1px solid var(--line); border-radius: 3px;
+}
+
 .schematic {
   display: block; width: 100%; height: auto;
   background: var(--ink-2);
